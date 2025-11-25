@@ -25,7 +25,7 @@ public class Main {
         JFrame Bankframe = new JFrame("Bank App");
         Bankframe.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Bankframe.setVisible(true);
-        Bankframe.setSize(400, 500);
+        Bankframe.setSize(400, 400);
         Bankframe.setLocationRelativeTo(null);
         Bankframe.setResizable(false);
 

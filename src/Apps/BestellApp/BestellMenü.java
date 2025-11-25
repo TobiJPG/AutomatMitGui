@@ -12,7 +12,7 @@ import java.awt.*;
 public class BestellMenü extends JFrame {
 
     public void BestellMenü(JFrame frame, Konto kundenManager, Konto geschKunde1) {
-        setSize(200, 200);
+        setSize(300, 400);
         setResizable(false);
         setLocationRelativeTo(null);
 

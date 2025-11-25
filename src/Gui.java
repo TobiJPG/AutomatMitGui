@@ -6,6 +6,8 @@ import Apps.BestellApp.BestellMenü;
 import Apps.Bank.Konto;
 import Apps.Bank.Main;
 import Apps.Bank.Tools.KundenManager;
+import Apps.Jobs.JobsMenü;
+import Apps.Jobs.MatheAufgaben.Aufgaben;
 import Apps.Minispiele.MiniSpieleMenue;
 
 public class Gui {
@@ -90,7 +92,8 @@ public class Gui {
 
         //Paint
         buttonSnacks.addActionListener(e -> {
-
+            mainframe.setVisible(false);
+            JobsMenü.Menü(mainframe, kundenManager.getCurrentCustomer());
         });
 
         //Bank App
@@ -101,7 +104,6 @@ public class Gui {
 
         //MiniSpiele
         buttonGames.addActionListener(e -> {
-            //Klauen.KlauenWarsch(kundenManager.getCurrentCustomer(), geschKunde1);
             mainframe.setVisible(false);
             //SchereSteinPapier.main(mainframe);
             //TicTacToe_bot_oder_2_Spieler.AuswahlTicTacToe(mainframe);
@@ -131,6 +133,5 @@ public class Gui {
 
         // Zeige das Hauptfenster
         mainframe.setVisible(true);
-
     }
 }
