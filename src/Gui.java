@@ -16,12 +16,6 @@ public class Gui {
 
 
         try {
-
-
-            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-            //MetalLookAndFeel.setCurrentTheme(new OceanTheme()); // OceanTheme aktivieren
-            //UIManager.setLookAndFeel(new MetalLookAndFeel());
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
