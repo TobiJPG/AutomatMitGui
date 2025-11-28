@@ -32,7 +32,8 @@ public class TicTacToe_bot_oder_2_Spieler {
         Bot.setBounds(110, 50, 100, 50);
 
         JButton Verlassen = new JButton("Verlassen");
-        Verlassen.setBackground(Color.RED);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
         Verlassen.setBounds(52, 100, 100, 50);
 
 

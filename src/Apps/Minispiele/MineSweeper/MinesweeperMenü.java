@@ -14,7 +14,7 @@ public class MinesweeperMenü{
         Menü.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
         Menü.setResizable(false);
-        Menü.setSize(new Dimension(300, 150));
+        Menü.setSize(new Dimension(300, 400));
 
         JButton Anfänger = new JButton("Anfänger"); // 8x8 10 minen
         JButton Fortgeschritten = new JButton("Fortgeschritten"); // 16x16 40 minen

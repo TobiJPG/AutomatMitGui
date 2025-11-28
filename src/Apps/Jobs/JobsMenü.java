@@ -37,7 +37,8 @@ public class JobsMenü {
         XXXXX.setBackground(Color.PINK);
         XXX.setBackground(Color.PINK);
         XX.setBackground(Color.PINK);
-        Verlassen.setBackground(Color.RED);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
 
         Mathe.addActionListener(e-> {
             frame.setVisible(false);

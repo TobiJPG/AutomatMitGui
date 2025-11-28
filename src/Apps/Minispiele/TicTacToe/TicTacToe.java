@@ -31,7 +31,8 @@ public class TicTacToe {
         SpielPanel.setLayout(null);
 
         JButton Verlassen = new JButton("Verlassen");
-        Verlassen.setBackground(Color.RED);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
 
         SpielPanel.setBounds(0, 0, 330, 320);
         Verlassen.setBounds(0, 320, 330, 63);

@@ -51,8 +51,8 @@ public class Minesweeper extends JFrame {
         topPanel.setLayout(new BorderLayout());
 
         JButton Verlassen = new JButton("Verlassen");
-        Verlassen.setBackground(Color.RED);
-        Verlassen.setForeground(Color.WHITE);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
 
         Verlassen.addActionListener(e -> {
             dispose();

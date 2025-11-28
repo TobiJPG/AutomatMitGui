@@ -70,8 +70,8 @@ public class Gui {
         buttonGames.setFocusPainted(false);
 
 
-        buttonVerlassen.setBackground(Color.RED);
-        buttonVerlassen.setForeground(Color.BLACK);
+        buttonVerlassen.setBackground(Color.WHITE);
+        buttonVerlassen.setForeground(Color.RED);
         buttonVerlassen.setFocusPainted(false);
 
 

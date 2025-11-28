@@ -76,6 +76,7 @@ public class MinesweeperMenüDebug {
 
         Menü.add(Verlassen, BorderLayout.SOUTH);
         Menü.add(Schwer, BorderLayout.NORTH);
+        Menü.setLocationRelativeTo(null);
         Menü.setVisible(true);
 
     }

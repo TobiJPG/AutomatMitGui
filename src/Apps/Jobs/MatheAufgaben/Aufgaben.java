@@ -24,14 +24,18 @@ public class Aufgaben {
         frame.setResizable(false);
 
         frame.setSize(300,400);
-        frame.setLayout(new GridLayout(4,1));
+
+        JPanel Mathe = new JPanel();
+        Mathe.setLayout(new GridLayout(2,1));
 
 
 
-        Verlassen.setBackground(Color.RED);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
         FrageText.setEditable(false);
         FrageText.setFocusable(false);
         Verlassen.setFocusable(false);
+
 
 
         NeueZahlen();
@@ -65,10 +69,15 @@ public class Aufgaben {
             frame.setVisible(false);
             f.setVisible(true);
         });
+        JPanel Buttons = new JPanel();
+        Buttons.setLayout(new GridLayout(1,2));
 
-        frame.add(FrageText);
-        frame.add(FrageEingabe);
-        frame.add(Verlassen);
+
+        Mathe.add(FrageText);
+        Mathe.add(FrageEingabe);
+        Buttons.add(Verlassen);
+        frame.add(Mathe, BorderLayout.NORTH);
+        frame.add(Buttons, BorderLayout.SOUTH);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

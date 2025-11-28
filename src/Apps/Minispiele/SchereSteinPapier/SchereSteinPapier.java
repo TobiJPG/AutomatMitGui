@@ -35,7 +35,8 @@ public class SchereSteinPapier {
         Papier.setBackground(Color.WHITE);
 
         JButton verlassen = new JButton("Verlassen");
-        verlassen.setBackground(Color.RED);
+        verlassen.setBackground(Color.WHITE);
+        verlassen.setForeground(Color.RED);
 
         Schere.setFocusPainted(false);
 

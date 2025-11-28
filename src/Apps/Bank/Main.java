@@ -373,7 +373,8 @@ public class Main {
             // Hinzufügen eines Schließen-Buttons
             JButton closeButton = new JButton("Schließen");
             closeButton.setFocusPainted(false);
-            closeButton.setBackground(Color.RED);
+            closeButton.setBackground(Color.WHITE);
+            closeButton.setForeground(Color.RED);
             closeButton.addActionListener(closeEvent -> frame.dispose());
 
             // Buttons in ein Panel
@@ -508,7 +509,8 @@ public class Main {
 
         JButton buttonVerlassen = new JButton("Verlassen");
         buttonVerlassen.setFocusPainted(false);
-        buttonVerlassen.setBackground(Color.RED);
+        buttonVerlassen.setBackground(Color.WHITE);
+        buttonVerlassen.setForeground(Color.RED);
         buttonVerlassen.addActionListener(e -> {
             //System.out.println("Zurück zum Hauptmenü...");
             mainframe.setVisible(true);

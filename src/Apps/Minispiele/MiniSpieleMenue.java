@@ -43,7 +43,8 @@ public class MiniSpieleMenue {
         SchereSteinPapierSpiel.setBackground(Color.PINK);
         TicTacToeSpiel.setBackground(Color.PINK);
         MineSweeper.setBackground(Color.PINK);
-        Verlassen.setBackground(Color.RED);
+        Verlassen.setBackground(Color.WHITE);
+        Verlassen.setForeground(Color.RED);
 
         SchereSteinPapierSpiel.addActionListener(e -> {
             frame.setVisible(false);
