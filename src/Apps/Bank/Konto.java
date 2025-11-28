@@ -1,8 +1,6 @@
 package Apps.Bank;
 
-import Apps.Bank.Tools.IbanGen;
 import Apps.Bank.Tools.IbanGenRealBW;
-import Apps.Bank.Tools.KundenManager;
 import Apps.Bank.Tools.Transaktionen;
 
 import javax.swing.*;

@@ -31,6 +31,7 @@ public class Aufgaben {
         Verlassen.setBackground(Color.RED);
         FrageText.setEditable(false);
         FrageText.setFocusable(false);
+        Verlassen.setFocusable(false);
 
 
         NeueZahlen();

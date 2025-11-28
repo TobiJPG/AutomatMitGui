@@ -26,6 +26,13 @@ public class JobsMenü {
         JButton XXX = new JButton("XXXXX");
         JButton XX = new JButton("XXXXX");
 
+        Mathe.setFocusable(false);
+        XX.setFocusable(false);
+        XXXXX.setFocusable(false);
+        XXX.setFocusable(false);
+        Verlassen.setFocusable(false);
+
+
         Mathe.setBackground(Color.PINK);
         XXXXX.setBackground(Color.PINK);
         XXX.setBackground(Color.PINK);

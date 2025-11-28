@@ -2,16 +2,16 @@ import javax.swing.*;
 
 import java.awt.*;
 
-import Apps.BestellApp.BestellMenü;
+import Apps.BestellApp.NeuesBestellMenü;
 import Apps.Bank.Konto;
 import Apps.Bank.Main;
 import Apps.Bank.Tools.KundenManager;
 import Apps.Jobs.JobsMenü;
-import Apps.Jobs.MatheAufgaben.Aufgaben;
 import Apps.Minispiele.MiniSpieleMenue;
 
 public class Gui {
     public static void main(String[] args){
+
 
 
 
@@ -48,7 +48,7 @@ public class Gui {
 
 
         JButton buttonBestellen = new JButton("Bestell App");
-        JButton buttonSnacks = new JButton("In Construction....");
+        JButton buttonJobs = new JButton("Jobs");
         JButton buttonBankApp = new JButton("Bank App");
         JButton buttonGames = new JButton("Games");
         JButton buttonVerlassen = new JButton("Verlassen");
@@ -57,9 +57,9 @@ public class Gui {
         buttonBestellen.setForeground(Color.BLACK);
         buttonBestellen.setFocusPainted(false);
 
-        //buttonSnacks.setBackground(Color.PINK);
-        buttonSnacks.setForeground(Color.BLACK);
-        buttonSnacks.setFocusPainted(false);
+        buttonJobs.setBackground(Color.PINK);
+        buttonJobs.setForeground(Color.BLACK);
+        buttonJobs.setFocusPainted(false);
 
         buttonBankApp.setBackground(Color.PINK);
         buttonBankApp.setForeground(Color.BLACK);
@@ -77,15 +77,14 @@ public class Gui {
 
 
 
-        //AllesZone => Amazon Anspielung....
+        //Bestellen
         buttonBestellen.addActionListener(e -> {
             mainframe.setVisible(false);
-            BestellMenü Lol = new BestellMenü();
-            Lol.BestellMenü(mainframe, kundenManager.getCurrentCustomer(), geschKunde1);
+            NeuesBestellMenü.Menü(kundenManager.getCurrentCustomer(), geschKunde1, mainframe);
         });
 
-        //Paint
-        buttonSnacks.addActionListener(e -> {
+        //Jobs
+        buttonJobs.addActionListener(e -> {
             mainframe.setVisible(false);
             JobsMenü.Menü(mainframe, kundenManager.getCurrentCustomer());
         });
@@ -96,7 +95,7 @@ public class Gui {
             Main.Bankmain(kundenManager, mainframe);
         });
 
-        //MiniSpiele
+        //Spiele
         buttonGames.addActionListener(e -> {
             mainframe.setVisible(false);
             //SchereSteinPapier.main(mainframe);
@@ -112,7 +111,7 @@ public class Gui {
 
 
         Mainpanel.add(buttonBestellen);
-        Mainpanel.add(buttonSnacks);
+        Mainpanel.add(buttonJobs);
         Mainpanel.add(buttonBankApp);
         Mainpanel.add(buttonGames);
 

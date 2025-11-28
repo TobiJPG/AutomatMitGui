@@ -23,7 +23,7 @@ public class MiniSpieleMenue {
         frame.setResizable(false);
 
         JPanel Mainpanel = new JPanel();
-        Mainpanel.setLayout(new GridLayout(3, 2));
+        Mainpanel.setLayout(new GridLayout(3, 2, 10,10));
 
         JPanel VerlassenPanel = new JPanel();
 
@@ -62,6 +62,7 @@ public class MiniSpieleMenue {
             mainframe.setVisible(true);
         });
 
+        Mainpanel.setBackground(Color.LIGHT_GRAY);
         Mainpanel.add(SchereSteinPapierSpiel);
         Mainpanel.add(TicTacToeSpiel);
         Mainpanel.add(MineSweeper);

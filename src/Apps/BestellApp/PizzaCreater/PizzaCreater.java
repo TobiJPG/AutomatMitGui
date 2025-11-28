@@ -10,91 +10,92 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PizzaCreater {
-    public static void PizzaMachen(JFrame Mainframe, Konto kundeKonto, Konto geschäftKonto) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame f = new JFrame("Pizza  12€");
-            f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-            f.setLayout(new BorderLayout(10,10));
+
+    public static JPanel PizzaMachen(Konto kundeKonto, Konto geschäftKonto) {
+            JPanel f = new JPanel();
+            f.setLayout(new BorderLayout(0, 0));
+
+            JTabbedPane tabbedPane = new JTabbedPane();
 
             int targetW = 200;
             int targetH = 200;
             int x = 0, y = 0;
 
             // Icons laden
-            ImageIcon teig50       = loadIcon("/Bilder/Teig.png");
-            ImageIcon sosse50      = loadIcon("/Bilder/Soße.png");
+            ImageIcon teig50 = loadIcon("/Bilder/Teig.png");
+            ImageIcon sosse50 = loadIcon("/Bilder/Soße.png");
             ImageIcon sosseKaese50 = loadIcon("/Bilder/SoßeKäse.png");
-            ImageIcon kaese50      = loadIcon("/Bilder/Käse.png");
+            ImageIcon kaese50 = loadIcon("/Bilder/Käse.png");
 
-            ImageIcon salami50   = loadIcon("/Bilder/Salami.png");
+            ImageIcon salami50 = loadIcon("/Bilder/Salami.png");
             ImageIcon schinken50 = loadIcon("/Bilder/Schinken.png");
-            ImageIcon ananas50   = loadIcon("/Bilder/Ananas.png");
-            ImageIcon sucuk50    = loadIcon("/Bilder/Sucuk.png");
+            ImageIcon ananas50 = loadIcon("/Bilder/Ananas.png");
+            ImageIcon sucuk50 = loadIcon("/Bilder/Sucuk.png");
 
-            ImageIcon mais50     = loadIcon("/Bilder/Mais.png");
-            ImageIcon bohnen50   = loadIcon("/Bilder/Bohnen.png");
-            ImageIcon chili50    = loadIcon("/Bilder/Chili.png");
+            ImageIcon mais50 = loadIcon("/Bilder/Mais.png");
+            ImageIcon bohnen50 = loadIcon("/Bilder/Bohnen.png");
+            ImageIcon chili50 = loadIcon("/Bilder/Chili.png");
             ImageIcon zwiebeln50 = loadIcon("/Bilder/Zwiebeln.png");
-            ImageIcon pilze50    = loadIcon("/Bilder/Pilze.png");
+            ImageIcon pilze50 = loadIcon("/Bilder/Pilze.png");
 
             // Skalieren
-            ImageIcon teig       = scaleIconHighQuality(teig50, targetW, targetH);
-            ImageIcon sosse      = scaleIconHighQuality(sosse50, targetW, targetH);
+            ImageIcon teig = scaleIconHighQuality(teig50, targetW, targetH);
+            ImageIcon sosse = scaleIconHighQuality(sosse50, targetW, targetH);
             ImageIcon sosseKaese = scaleIconHighQuality(sosseKaese50, targetW, targetH);
-            ImageIcon kaese      = scaleIconHighQuality(kaese50, targetW, targetH);
+            ImageIcon kaese = scaleIconHighQuality(kaese50, targetW, targetH);
 
-            ImageIcon salami   = scaleIconHighQuality(salami50, targetW, targetH);
+            ImageIcon salami = scaleIconHighQuality(salami50, targetW, targetH);
             ImageIcon schinken = scaleIconHighQuality(schinken50, targetW, targetH);
-            ImageIcon ananas   = scaleIconHighQuality(ananas50, targetW, targetH);
-            ImageIcon sucuk    = scaleIconHighQuality(sucuk50, targetW, targetH);
+            ImageIcon ananas = scaleIconHighQuality(ananas50, targetW, targetH);
+            ImageIcon sucuk = scaleIconHighQuality(sucuk50, targetW, targetH);
 
-            ImageIcon mais     = scaleIconHighQuality(mais50, targetW, targetH);
-            ImageIcon bohnen   = scaleIconHighQuality(bohnen50, targetW, targetH);
-            ImageIcon chili    = scaleIconHighQuality(chili50, targetW, targetH);
+            ImageIcon mais = scaleIconHighQuality(mais50, targetW, targetH);
+            ImageIcon bohnen = scaleIconHighQuality(bohnen50, targetW, targetH);
+            ImageIcon chili = scaleIconHighQuality(chili50, targetW, targetH);
             ImageIcon zwiebeln = scaleIconHighQuality(zwiebeln50, targetW, targetH);
-            ImageIcon pilze    = scaleIconHighQuality(pilze50, targetW, targetH);
+            ImageIcon pilze = scaleIconHighQuality(pilze50, targetW, targetH);
 
             // Labels für Layer
-            JLabel Lteig       = new JLabel(teig);
-            JLabel Lsosse      = new JLabel(sosse);
+            JLabel Lteig = new JLabel(teig);
+            JLabel Lsosse = new JLabel(sosse);
             JLabel LsosseKaese = new JLabel(sosseKaese);
-            JLabel Lkaese      = new JLabel(kaese);
+            JLabel Lkaese = new JLabel(kaese);
 
-            JLabel Lsalami   = new JLabel(salami);
+            JLabel Lsalami = new JLabel(salami);
             JLabel Lschinken = new JLabel(schinken);
-            JLabel Lananas   = new JLabel(ananas);
-            JLabel Lsucuk    = new JLabel(sucuk);
+            JLabel Lananas = new JLabel(ananas);
+            JLabel Lsucuk = new JLabel(sucuk);
 
-            JLabel Lpilze    = new JLabel(pilze);
-            JLabel Lmais     = new JLabel(mais);
-            JLabel Lbohnen   = new JLabel(bohnen);
-            JLabel Lchili    = new JLabel(chili);
+            JLabel Lpilze = new JLabel(pilze);
+            JLabel Lmais = new JLabel(mais);
+            JLabel Lbohnen = new JLabel(bohnen);
+            JLabel Lchili = new JLabel(chili);
             JLabel Lzwiebeln = new JLabel(zwiebeln);
 
             // LayeredPane
             JLayeredPane layered = new JLayeredPane();
             layered.setPreferredSize(new Dimension(targetW, targetH));
-            for (JLabel lbl : new JLabel[]{ Lteig, Lsosse, LsosseKaese, Lkaese, Lsalami, Lschinken, Lananas, Lsucuk, Lpilze, Lmais, Lbohnen, Lchili, Lzwiebeln }) {
+            for (JLabel lbl : new JLabel[]{Lteig, Lsosse, LsosseKaese, Lkaese, Lsalami, Lschinken, Lananas, Lsucuk, Lpilze, Lmais, Lbohnen, Lchili, Lzwiebeln}) {
                 lbl.setBounds(x, y, targetW, targetH);
             }
             layered.add(Lteig, Integer.valueOf(0));
-            layered.add(Lsosse,      Integer.valueOf(100));
+            layered.add(Lsosse, Integer.valueOf(100));
             layered.add(LsosseKaese, Integer.valueOf(110));
-            layered.add(Lkaese,      Integer.valueOf(120));
+            layered.add(Lkaese, Integer.valueOf(120));
 
-            layered.add(Lsalami,   Integer.valueOf(200));
+            layered.add(Lsalami, Integer.valueOf(200));
             layered.add(Lschinken, Integer.valueOf(210));
-            layered.add(Lananas,   Integer.valueOf(220));
-            layered.add(Lsucuk,    Integer.valueOf(230));
+            layered.add(Lananas, Integer.valueOf(220));
+            layered.add(Lsucuk, Integer.valueOf(230));
 
-            layered.add(Lpilze,    Integer.valueOf(300));
-            layered.add(Lmais,     Integer.valueOf(310));
-            layered.add(Lbohnen,   Integer.valueOf(320));
-            layered.add(Lchili,    Integer.valueOf(330));
+            layered.add(Lpilze, Integer.valueOf(300));
+            layered.add(Lmais, Integer.valueOf(310));
+            layered.add(Lbohnen, Integer.valueOf(320));
+            layered.add(Lchili, Integer.valueOf(330));
             layered.add(Lzwiebeln, Integer.valueOf(340));
 
             // Panels (jede Gruppe vertikal untereinander)
-            JPanel AuswahlenGes   = new JPanel(new GridLayout(1,3,10,0));
+            JPanel AuswahlenGes = new JPanel(new GridLayout(1, 3, 5, -5));
 
             JPanel Auswahl_Sossen = createVerticalPanel("Grundbau:");
             JPanel Auswahl_Belag1 = createVerticalPanel("Belag 1:");
@@ -113,8 +114,8 @@ public class PizzaCreater {
             JCheckBox CNichts2 = new JCheckBox("Nichts");
 
             JCheckBox CPilze = new JCheckBox("Pilze");
-            JCheckBox CMais  = new JCheckBox("Mais");
-            JCheckBox CBohnen= new JCheckBox("Bohnen");
+            JCheckBox CMais = new JCheckBox("Mais");
+            JCheckBox CBohnen = new JCheckBox("Bohnen");
             JCheckBox CChili = new JCheckBox("Chili");
             JCheckBox CZwiebeln = new JCheckBox("Zwiebeln");
             JCheckBox CNichts3 = new JCheckBox("Nichts");
@@ -238,17 +239,26 @@ public class PizzaCreater {
             CSosse.addActionListener(e -> {
                 boolean sel = CSosse.isSelected();
                 Lsosse.setVisible(sel);
-                if (sel) { LsosseKaese.setVisible(false); Lkaese.setVisible(false); }
+                if (sel) {
+                    LsosseKaese.setVisible(false);
+                    Lkaese.setVisible(false);
+                }
             });
             CSosseKaese.addActionListener(e -> {
                 boolean sel = CSosseKaese.isSelected();
                 LsosseKaese.setVisible(sel);
-                if (sel) { Lsosse.setVisible(false); Lkaese.setVisible(false); }
+                if (sel) {
+                    Lsosse.setVisible(false);
+                    Lkaese.setVisible(false);
+                }
             });
             CKaese.addActionListener(e -> {
                 boolean sel = CKaese.isSelected();
                 Lkaese.setVisible(sel);
-                if (sel) { Lsosse.setVisible(false); LsosseKaese.setVisible(false); }
+                if (sel) {
+                    Lsosse.setVisible(false);
+                    LsosseKaese.setVisible(false);
+                }
             });
             CNichts1.addActionListener(e -> {
                 if (CNichts1.isSelected()) {
@@ -290,34 +300,18 @@ public class PizzaCreater {
 
 
             JButton Bestätigen = new JButton("Bestätigen");
-            JButton Verlassen = new JButton("Verlassen");
 
             Bestätigen.setBackground(Color.white);
-            Verlassen.setBackground(Color.white);
             Bestätigen.setForeground(Color.GREEN);
-            Verlassen.setForeground(Color.RED);
 
-            Bestätigen.setSize(100,100);
-            Verlassen.setSize(100,100);
+            Bestätigen.setSize(100, 100);
 
             Bestätigen.setFocusable(false);
-            Verlassen.setFocusable(false);
             JPanel southWrapper = new JPanel(new BorderLayout());
 
-            Bestätigen.addActionListener( e ->{
+            Bestätigen.addActionListener(e -> {
                 //f.setVisible(false);
-                GlobalCountdown warten = new GlobalCountdown();
-                        warten.start(60, java.util.concurrent.TimeUnit.SECONDS);
-                new javax.swing.Timer(1000, ev -> {
-                    if (warten.isFinished()) {
-                        ((javax.swing.Timer) ev.getSource()).stop();
-                        // Optional: Benutzer informieren, dass es weitergeht
-                        JOptionPane.showMessageDialog(f, "Ihre Pizza ist Fertig.");
-                    }
-                }).start();
-                southWrapper.setVisible(false);
-                Bestätigen.setEnabled(false);
-                f.pack();
+
 
                 String pinInput = JOptionPane.showInputDialog("Bitte geben Sie Ihre PIN ein:");
                 try {
@@ -330,6 +324,18 @@ public class PizzaCreater {
 
                             JOptionPane.showMessageDialog(f, "Danke für Ihren Kauf von "
                                     + "Selfmade Pizza" + " für " + 12 + "€.");
+                            GlobalCountdown warten = new GlobalCountdown();
+                            warten.start(60, java.util.concurrent.TimeUnit.SECONDS);
+                            new javax.swing.Timer(1000, ev -> {
+                                if (warten.isFinished()) {
+                                    ((javax.swing.Timer) ev.getSource()).stop();
+                                    // Optional: Benutzer informieren, dass es weitergeht
+                                    JOptionPane.showMessageDialog(f, "Ihre Pizza ist Fertig.");
+                                    Toolkit.getDefaultToolkit().beep();
+                                }
+                            }).start();
+                            southWrapper.setVisible(false);
+                            Bestätigen.setEnabled(false);
                         } else {
                             JOptionPane.showMessageDialog(f, "Nicht genug Guthaben! Kauf nicht möglich.",
                                     "Fehler", JOptionPane.ERROR_MESSAGE);
@@ -344,31 +350,26 @@ public class PizzaCreater {
 
             });
 
-            Verlassen.addActionListener(e->{
-                f.setVisible(false);
-                Mainframe.setVisible(true);
-            });
-
-            // Frame
 
 
 
             southWrapper.setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
             southWrapper.setBackground(Color.WHITE);
-            southWrapper.add(AuswahlenGes, BorderLayout.CENTER);
+            //southWrapper.add(AuswahlenGes, BorderLayout.CENTER);
 
 
-            f.add(Bestätigen, BorderLayout.EAST);
-            f.add(Verlassen, BorderLayout.WEST);
+            tabbedPane.add("Pizza", layered);
+            tabbedPane.add("Auswahl", AuswahlenGes);
 
-            f.add(layered, BorderLayout.CENTER);
-            f.add(southWrapper, BorderLayout.SOUTH);
-            f.pack();
-            f.setResizable(false);
-            f.setLocationRelativeTo(null);
-            f.setVisible(true);
-        });
+
+            f.add(Bestätigen, BorderLayout.SOUTH);
+            //f.add(layered, BorderLayout.CENTER);
+            //f.add(southWrapper, BorderLayout.SOUTH);
+            f.add(tabbedPane, BorderLayout.NORTH);
+
+        return f;
     }
+
 
     private static JPanel createVerticalPanel(String title) {
         JPanel p = new JPanel();
@@ -393,11 +394,11 @@ public class PizzaCreater {
     private static ImageIcon loadIcon(String path) {
         java.net.URL url = PizzaCreater.class.getResource(path);
         if (url == null) {
-            System.err.println("Bild nicht gefunden: " + path);
+            //System.err.println("Bild nicht gefunden: " + path);
             return new ImageIcon();
         }
         ImageIcon icon = new ImageIcon(url);
-        System.out.println(path + " -> " + icon.getIconWidth() + "x" + icon.getIconHeight());
+        //System.out.println(path + " -> " + icon.getIconWidth() + "x" + icon.getIconHeight());
         return icon;
     }
 
