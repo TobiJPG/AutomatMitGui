@@ -76,7 +76,7 @@ public class NeuesBestellMenü {
 
             // Kauf durchführen
             kundeKonto.Geheimabheben(gesamtPreis, pinEingabe, gekaufteItems.toString());
-
+            geschäftKonto.Geheimeinzahlen(gesamtPreis,gekaufteItems.toString());
             if (kundeKonto.Durch) {
                 JOptionPane.showMessageDialog(frame, "Kauf erfolgreich! Gesamtpreis: " + gesamtPreis + "€");
             } else {

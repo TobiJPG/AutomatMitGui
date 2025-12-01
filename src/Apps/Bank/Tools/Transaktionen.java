@@ -39,6 +39,6 @@ public class Transaktionen {
     public String toString() {
         return "[" + getFormattedDatum() + "] " +
                 "Typ: " + typ +
-                ", Betrag: " + String.format("%.2f €", betrag);
+                "  Betrag: " + String.format("%.2f €", betrag);
     }
 }
